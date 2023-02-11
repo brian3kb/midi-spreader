@@ -157,7 +157,7 @@ function toggleOutputChannel(channel) {
     } else {
         app.outputChannels[channel] = createChannel(channel);
     }
-    localStorage.setItem('midi-out-channels', JSON.stringify(Object.keys(app.outputChannels)));
+    localStorage.setItem('midi-out-channels', JSON.stringify(Object.keys(app.outputChannels).filter(c => !!app.outputChannels[c])));
     setOutputSelects();
 }
 
