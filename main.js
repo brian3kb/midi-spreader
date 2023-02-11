@@ -52,7 +52,9 @@ function listInputsAndOutputs(midiAccess) {
         const output = entry[1];
         elOutputs.innerHTML +=
             `<tr class="${output.id}" onclick="changeOutputDevice('${output.id}')">
-                <td class="cell-id table-secondary ${app.outputDevice === output.id ? 'table-success' : ''}">${output.id}</td>
+                <td class="cell-id table-secondary ${app.outputDevice === output.id ? 'table-success' : ''}">
+                    <button class="btn btn-outline-secondary">${output.id}</button>
+                </td>
                 <td>${output.manufacturer}</td>
                 <td>${output.name}</td>
             </tr>`;
